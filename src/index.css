@@ -9,10 +9,11 @@ body {
 }
 
 .app {
-  background-image: url('./assets/default_bg.png');
-  background-position: center;
-  background-size: contain;
+  background-color: rgb(90, 86, 86);
+  object-fit: cover;
+  width: 100%;
   background-repeat: no-repeat;
+  background-position: center center;
   transition: 0.4s ease;
 }
 

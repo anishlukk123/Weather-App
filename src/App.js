@@ -39,23 +39,20 @@ function App() {
         setActiveQuery(query)
         setWeather(result);
         console.log(result.weather[0].main); 
-        if(result.weather[0].main.temp > 16){
-          setBackgroundNumber(1)
-        }
-        else if(result.weather[0].main.temp < 16){
-          setBackgroundNumber(2)
-        }
-        else if(result.weather[0].main === "Thunderstorm" || result.weather[0].main === "Rain"){
+        if(result.weather[0].main === "Thunderstorm" || result.weather[0].main === "Rain"){
           setBackgroundNumber(3)
-          console.log("thisalsoran")
         }
         else if(result.weather[0].main === "Snow"){
           setBackgroundNumber(4)
         }
-       
+        else if(result.main.temp >= 34){
+          setBackgroundNumber(1)
+        }
+        else if(result.main.temp <= 1){
+          setBackgroundNumber(2)
+        }
         else{
           setBackgroundNumber(0)
-          console.log("thisran")
         }
         setQuery('');
       })
@@ -88,7 +85,7 @@ function clear() {
   }
 
   return (
-    <div className='app' style={{backgroundImage: `url(${background[backgroundNumber]})`, backgroundSize: 'cover'}}>
+    <div className='app' style={{backgroundImage: `url(${background[backgroundNumber]})`}}>
       <main>
         <div className="search-box">
           <input 
